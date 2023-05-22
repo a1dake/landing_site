@@ -1,0 +1,20 @@
+<main id="feedback">
+    <div class="container marketing text-center">
+        <h2 class="pb-2 border-bottom">ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h2>
+        <div class="row">
+            {% for person in feedbacks %}
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder"
+                         preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+                    </svg>
+                    <h2 class="fw-normal">{{person['name']}}</h2>
+                    {% for line in person['desc'].split('\n') %}
+                        <p>{{line}}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
